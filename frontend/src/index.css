@@ -292,7 +292,7 @@ body {
 
 /* modal width tweak for SearchFilter */
 .modal {
-  max-width: 720px;
+  /* max-width: 720px; */
 }
 
 .btn.ghost:hover {
@@ -406,7 +406,7 @@ body {
 }
 
 .modal {
-  width: min(880px, 96%);
+  width: 100vw;
   background: linear-gradient(180deg, rgb(37, 28, 94), rgb(48, 61, 236));
   border-radius: 14px;
   padding: 18px;
@@ -586,8 +586,8 @@ body {
 
   /* modal becomes near full-screen on mobile for ease of editing */
   .modal {
-    width: calc(100% - 20px);
-    height: calc(100vh - 30px);
+    width: 100vw;
+    height: 100vh;
     max-height: calc(100vh - 30px);
     border-radius: 12px;
     padding: 12px;
