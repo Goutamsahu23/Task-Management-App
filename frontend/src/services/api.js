@@ -1,4 +1,4 @@
-
+// src/services/api.js
 import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
@@ -8,9 +8,9 @@ const apiInstance = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
-// request interceptor to attach JWT token from localStorage
+// Attach JWT automatically (from localStorage)
 apiInstance.interceptors.request.use((config) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token') || '';
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 }, (err) => Promise.reject(err));
@@ -44,6 +44,14 @@ export default {
 
   // Card comments
   addComment: (cardId, data) => apiInstance.post(`/cards/${cardId}/comments`, data),
+
+  // Attachments
+  uploadAttachment: (cardId, formData, onUploadProgress) =>
+    apiInstance.post(`/cards/${cardId}/attachments`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+      onUploadProgress
+    }),
+  deleteAttachment: (cardId, attachmentId) => apiInstance.delete(`/cards/${cardId}/attachments/${attachmentId}`),
 
   // Search
   searchCards: (params) => apiInstance.get('/search/cards', { params }),

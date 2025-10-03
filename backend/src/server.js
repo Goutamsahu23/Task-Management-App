@@ -7,6 +7,8 @@ const boardRoutes = require('./routes/boardRoutes');
 const listRoutes = require('./routes/listRoutes');
 const cardRoutes = require('./routes/cardRoutes');
 const searchRoutes = require('./routes/searchRoutes');
+const path = require('path');
+const attachmentRoutes = require('./routes/attachmentRoutes');
 
 dotenv.config();
 connectDB();
@@ -17,12 +19,14 @@ app.use(cors());
 app.use(express.json()); // body parser
 
 app.get('/', (req, res) => res.send('Task Management API'));
+app.use('/uploads', express.static(path.join(__dirname, './uploads')));
 
 app.use('/api/auth', authRoutes);
 app.use('/api/boards', boardRoutes);
 app.use('/api/lists', listRoutes);
 app.use('/api/cards', cardRoutes);
 app.use('/api/search', searchRoutes);
+app.use('/api', attachmentRoutes);
 
 app.use((err, req, res, next) => {
   console.error(err);
