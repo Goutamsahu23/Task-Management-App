@@ -34,9 +34,9 @@ export default function Dashboard() {
           <div className="small" style={{ marginTop:6 }}>Organize projects and collaborate with your team</div>
         </div>
 
-        <form onSubmit={handleCreate} style={{ display:'flex', gap:10, alignItems:'center' }}>
+        <form onSubmit={handleCreate} className='create-board-from'>
           <input className="input" placeholder="Board title" value={title} onChange={e=>setTitle(e.target.value)} style={{ width:220 }} />
-          <input className="input" placeholder="Short description (optional)" value={description} onChange={e=>setDescription(e.target.value)} style={{ width:340 }} />
+          <input className="input" placeholder="Short description (optional)" value={description} onChange={e=>setDescription(e.target.value)} style={{ width:'100%' }} />
           <button className="btn primary" type="submit">Create board</button>
         </form>
       </div>

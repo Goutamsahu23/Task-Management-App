@@ -85,14 +85,14 @@ export default function BoardPage() {
           <div className="small" style={{ marginTop:6 }}>{activeBoard.description || 'No description'}</div>
         </div>
 
-        <div style={{ display:'flex', gap:12, alignItems:'center' }}>
-          <form onSubmit={handleRenameBoard} style={{ display:'flex', gap:8, alignItems:'center' }}>
-            <input className="input" value={renameTitle} onChange={e => setRenameTitle(e.target.value)} />
+        <div className='create-board-from'>
+          <form onSubmit={handleRenameBoard} >
+            <input className="input" value={renameTitle} onChange={e => setRenameTitle(e.target.value)} style={{ width:'100%' }} />
             <button className="btn primary" type="submit">Rename</button>
           </form>
 
-          <form onSubmit={handleInvite} style={{ display:'flex', gap:8, alignItems:'center' }}>
-            <input className="input" placeholder="Invite userId" value={inviteUserId} onChange={e => setInviteUserId(e.target.value)} style={{ width:200 }} />
+          <form onSubmit={handleInvite} >
+            <input className="input" placeholder="Invite userId" value={inviteUserId} onChange={e => setInviteUserId(e.target.value)} style={{ width:'100%' }} />
             <select value={inviteRole} onChange={e => setInviteRole(e.target.value)} className="input" style={{ width:120 }}>
               <option value="Admin">Admin</option>
               <option value="Editor">Editor</option>
@@ -104,7 +104,7 @@ export default function BoardPage() {
       </div>
 
       <form onSubmit={handleCreateList} style={{ marginBottom:14 }}>
-        <input className="input" placeholder="Add list (column)" value={newListTitle} onChange={e => setNewListTitle(e.target.value)} style={{ width:300 }} />
+        <input className="input" placeholder="Add list (column)" value={newListTitle} onChange={e => setNewListTitle(e.target.value)} style={{ width:'100%' }} />
         <button className="btn primary" style={{ marginLeft:10 }} type="submit">Add List</button>
       </form>
 
