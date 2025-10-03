@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchBoardById, createList, moveCardApi, reorderListsApi, renameBoardApi, inviteMemberApi

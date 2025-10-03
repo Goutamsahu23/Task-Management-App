@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import CardItem from './CardItem';
 import { useDispatch } from 'react-redux';
 import { createCard, renameListApi, deleteListApi } from '../redux/boardSlice';
