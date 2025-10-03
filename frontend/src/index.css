@@ -412,7 +412,7 @@ body {
   padding: 18px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   box-shadow: 0 16px 50px rgba(2, 6, 23, 0.7);
-  max-height: 90vh;
+  max-height: 70vh;
   overflow: auto;
 }
 
@@ -587,7 +587,7 @@ body {
   /* modal becomes near full-screen on mobile for ease of editing */
   .modal {
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
     max-height: calc(100vh - 30px);
     border-radius: 12px;
     padding: 12px;
